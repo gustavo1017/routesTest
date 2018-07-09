@@ -3,15 +3,19 @@
 
 Route::get('/', function(){
 
-	return "Hola desde la pagina de inicio";
+	echo "<a href=". route('contactos') .">Contactos</a><br>";
+	echo "<a href=". route('contactos') .">Contactos</a><br>";
+	echo "<a href=". route('contactos') .">Contactos</a><br>";
+	echo "<a href=". route('contactos') .">Contactos</a><br>";
+	echo "<a href=". route('contactos') .">Contactos</a><br>";
 
 });
+//Asignandole nombre a la ruta
+Route::get('contacto',['as' => 'contactos', function(){
 
-Route::get('contacto',function(){
+	return "Seccion de contactos";
 
-	return "Hola desde la pagina de contacto";
-
-});
+}]);
 /* Asi decimos que de no dar un nombre la variable se le asignaria como invitado*/
 Route::get('saludos/{nombre?}',function($nombre = "Invitado"){
 
