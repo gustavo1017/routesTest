@@ -12,8 +12,8 @@ Route::get('contacto',function(){
 	return "Hola desde la pagina de contacto";
 
 });
-/*El parametro nombre es obligatorio*/
-Route::get('saludos/{nombre}',function($nombre){
+/* Asi decimos que de no dar un nombre la variable se le asignaria como invitado*/
+Route::get('saludos/{nombre?}',function($nombre = "Invitado"){
 
 	return "Saludos $nombre";
 
