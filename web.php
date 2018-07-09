@@ -14,7 +14,7 @@ Route::get('contacto',['as' => 'contactos', function(){
 }]);
 /* Asi decimos que de no dar un nombre la variable se le asignaria como invitado*/
 Route::get('saludos/{nombre?}',['as' => 'saludos',function($nombre = "Invitado"){
-    /*compact devuelve un array con la llave nombre y valor nombre siempre y cuando  exista*/
-	return view('saludo', compact('nombre'));
+    $html = "<h2>Contenido html</2>"; //Supuestamente ingresado por el usuario
+	return view('saludo', compact('nombre','html'));
    
 }])->where('nombre',"[A-Za-z]+"); //Validacion para el nombre
