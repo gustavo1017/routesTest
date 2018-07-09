@@ -16,5 +16,5 @@ Route::get('contacto',function(){
 Route::get('saludos/{nombre?}',function($nombre = "Invitado"){
 
 	return "Saludos $nombre";
-
-});
+   
+})->where('nombre',"[A-Za-z]+"); //Validacion para el nombre
