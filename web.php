@@ -16,6 +16,12 @@ Route::get('contacto',['as' => 'contactos', function(){
 Route::get('saludos/{nombre?}',['as' => 'saludos',function($nombre = "Invitado"){
     $html = "<h2>Contenido html</2>"; //Supuestamente ingresado por el usuario
     $script = "<script>alert('Problema XSS - Cross Site Scripting!')</script>"; //Supuestamente ingresado por el usuario
-	return view('saludo', compact('nombre','html','script'));
+    $consolas = [
+   	"play station 4",
+   	"Xbox One",
+   	"Wii u"
+   ];
+	return view('saludo', compact('nombre','html','script','consolas'));
    
+
 }])->where('nombre',"[A-Za-z]+"); //Validacion para el nombre
